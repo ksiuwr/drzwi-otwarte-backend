@@ -1,7 +1,7 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import path from 'path';
+import url from 'url';
 
-export const getDirname = (url: string): string => {
-	const fileName = fileURLToPath(url);
-	return dirname(fileName);
+export const getDirname = (fileUrl: string): string => {
+	const fileName = url.fileURLToPath(fileUrl);
+	return path.dirname(fileName);
 };

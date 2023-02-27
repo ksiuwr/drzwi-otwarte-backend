@@ -5,15 +5,25 @@ import db from '../db.js';
 const User = db.define(
 	'users',
 	{
-		username: {
-			allowNull: false,
+		name: {
 			type: DataTypes.STRING(100),
+			allowNull: false,
 			unique: true
 		},
 		serial: {
-			allowNull: false,
 			type: DataTypes.STRING(8),
+			allowNull: false,
 			unique: true
+		},
+		last_used: {
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: DataTypes.NOW
+		},
+		timestamp: {
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: DataTypes.NOW
 		}
 	},
 	{
