@@ -29,7 +29,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-loadRoutes(app);
+await loadRoutes(app);
 
 app.use(errorHandler);
 
